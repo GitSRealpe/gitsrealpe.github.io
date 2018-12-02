@@ -35,7 +35,7 @@
     var _this = this;
 	dummy = this.physics.add.sprite(100, 100, 'target');
 	
-	player = this.physics.add.sprite(100, 100, 'dron');
+	player = this.physics.add.sprite(-90, 2070, 'dron');
 	player.setOrigin(0.5, 0.5).setDisplaySize(60, 60).setCollideWorldBounds(false);
 	this.cameras.main.startFollow(player);
 	this.anims.create({
@@ -69,7 +69,7 @@
 	this.input.on('pointerdown', function (pointer) {
 		dummy.destroy();
 		this.physics.moveTo(player, pointer.x+this.cameras.main.scrollX, pointer.y+this.cameras.main.scrollY, 85);
-		dummy = this.physics.add.sprite(pointer.x + this.cameras.main.scrollX, pointer.y + this.cameras.main.scrollY, 'target', 1);
+		dummy = this.physics.add.sprite((pointer.x + this.cameras.main.scrollX), (pointer.y + this.cameras.main.scrollY), 'target', 1);
 		posx=pointer.x+this.cameras.main.scrollX;
 		posy=pointer.y+this.cameras.main.scrollY;
 		console.log('muevase hacia X: ' + posx + 'Y: ' + posy);
@@ -77,16 +77,14 @@
     }, this);
 	
 	cursors = this.input.keyboard.createCursorKeys();
-
+	
+	
     },
 	
 	update: function (time, delta)
     {
         const speed = 75;
 		const prevVelocity = player.body.velocity.clone();
-
-	// Stop any previous movement from the last frame
-		//player.body.setVelocity(0);
 
 	// Horizontal movement
 		if (cursors.left.isDown) {
@@ -112,6 +110,8 @@
 		}
 		
 		
+		
+		
 		text2.setText('Sprite \n' + player.x + '\n' + player.y);
     }
 
@@ -130,7 +130,7 @@
 
     preload: function ()
     {
-        this.load.spritesheet('lupas', 'assets/sprites/lupas.png',{frameWidth: 32, frameHeight:32});
+        this.load.spritesheet('lupas', 'assets/sprites/lupas.png',{frameWidth: 33, frameHeight:33});
     },
 
     create: function ()
@@ -139,11 +139,18 @@
 		var zip=1;
         zoomin = this.physics.add.sprite(470,420, 'lupas', 0).setInteractive();
 		zoomout = this.physics.add.sprite(470,470, 'lupas', 1).setInteractive();
+		camara = this.physics.add.sprite(470,360, 'lupas', 2).setInteractive();
 		zoomin.setDisplaySize(50,50);
 		zoomout.setDisplaySize(50,50);
+		camara.setDisplaySize(90,90);
 		
+		this.anims.create({
+        key: 'anicamara',
+        frames: this.anims.generateFrameNumbers('lupas', {start:3, end:4}),
+        frameRate: 10,
+        repeat: -1
+		});
 		
-	
 		zoomin.on('pointerdown', function (pointer) {
 		zip=zip*2;
         cam.zoomTo(zip,1500);
@@ -155,9 +162,20 @@
         cam.zoomTo(zip,1500);
     });
 	
+	camara.on('pointerdown', function (pointer) {
+		console.log('click');
+		if(distp1 < 50){
+			console.log('click1');
+		}
+		if(distp2 < 50){
+			console.log('click2');
+		}
+    });
+	
     }
 
 });
+	
 	//escena fondo
 	var fondo = new Phaser.Class({
 
@@ -172,16 +190,56 @@
 
     preload: function ()
     {
-        this.load.image('foto', 'assets/foto.jpg');
+        this.load.image('foto', 'assets/mapaUD.png');
     },
 
     create: function ()
     {
 		var _this = this;
+		var visitado = false;
 		cam = this.cameras.main;
         fondo = this.add.image(400, 300, 'foto');
 		this.cameras.main.startFollow(player);
-    }
+		
+		// We create the graphics object
+		pos1 = this.add.graphics({ x: -90, y: 1950 });
+		pos2 = this.add.graphics({ x: 515, y: 1195 });
+		pos1.fillStyle(0xff0000, 0.7);
+		pos1.fillCircle(0, 0, 50);
+		pos2.fillCircle(0, 0, 50);
+		
+		
+    },
+	
+	update: function(time,delta)
+	{
+	
+	distp1 = Phaser.Math.Distance.Between(player.x,player.y,pos1.x,pos1.y);
+	distp2 = Phaser.Math.Distance.Between(player.x,player.y,pos2.x,pos2.y);
+	
+		if(moviendose){
+			if(distp1 < 50){
+				if(!visitado){
+					console.log('Lugar 1');
+					camara.anims.play('anicamara');
+					visitado = true;
+				}
+			}
+			if(distp1 > 50 && distp2 > 50){
+				visitado=false;
+				camara.anims.stop('anicamara');
+				camara.setFrame(2);
+			}
+			
+			if(distp2 < 50){
+				if(!visitado){
+					console.log('Lugar 2');
+					camara.anims.play('anicamara');
+					visitado = true;
+				}
+			}
+		}
+	}
 
 });
 	
@@ -205,13 +263,16 @@
     var game = new Phaser.Game(config);
 	let cursors;
 	let player;
+	let dummy;
 	let target;
 	let text;
 	let text2;
-	let camaraG;
+	var distp1,distp2,pos3,pos4;
 	var moviendose = true;
 	var posx, posy;
 	var cam;
+	var camara;
+	var visitado;
 
 	
 	
