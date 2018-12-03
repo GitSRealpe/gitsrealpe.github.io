@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>La UD- Grafica Interactiva</title>											<!-- titulo del sitio -->
+<link href="stilos.css" rel="stylesheet" type="text/css">							<!-- asociacion a la hoja de estilos -->
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />			<!-- agregar icono de pestaña -->
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+
+<body>
+<h1 class="titulo"><a href="index.html" target="_self" ><img src="imagenes/logo.png" width="720px" heigth="480px" alt="imagen mapa ciudad"/></a>
+<a href="http://www.ventanagrafica.co/grafica/index.html" target="_new">Grafica interactiva: Ejercicio1</a></h1>
+
+<div class="contenedor">
+<div class="sidenav">
+	<a href="index.html" target="_self">Inicio</a>
+	<a class="activo" href="ubicacion.html" target="_self">¿Donde queda?</a>
+	<a href="historia.html">Un poco de historia</a>
+	<a href="people.html">¿Quien se encuentra allá?</a>
+	<a href="actividades.html">¿Que hay para hacer allá?</a>
+	<a href="interactivo.html">Juego/Mapa interactivo</a>
+</div>
+
+
+<div class="contenido">
+  <h2 class="seccion">Ubicación</h2>
+	<p>Aquí podras encontrar toda la información con respecto a la ubicación, como llegar, y como luce la fachada
+	o la primera vista que se obtiene cuando se llega a la universidad.
+	</p>
+	<nav>
+  <a href="#ciudad" target="_self"><button class="boton">Ciudad</button></a>
+  <a href="#llegar" target="_self"><button class="boton">Como llegar</button></a>
+  <a href="#lugar" target="_self"><button class="boton">El sitio</button></a>
+  </nav>
+  <div class="contenedor">
+	<h3 id="ciudad" class="seccion">Ciudad</h3>
+	<p>La universidad distrital Francisco José de Caldas se ubica en Bogotá, la ciudad capital de Colombia.</p>
+	<img src="imagenes/city.png" width="720px" heigth="480px" alt="imagen mapa ciudad" style="float:left"/>
+	<p> Esta universidad esta distribuida en 5 sedes alrededor de diferentes zonas de Bogotá, estas zonas y sus respectivas sedes son:</p>
+	<ul>
+	<li><b>Sede de Ingenierias</b>, ubicado en el sector de Chapinero, se llega por la estacion de Transmilenio de la Av.39</li>
+	<li><b>Sede de la Macarena</b>, donde se encuentran los programas de ciencias y educación </li>
+	<li><b>Sede el Vivero</b>, de esta sede se trata esta sitio web</li>
+	<li><b>Sede de Tecnologias</b>, ubicada en el barrio de la Candelaria, en la localidad de ciudad Bolivar, recibe su nombre ya que
+	 el nivel academico de los programs que ofrece es el de <i>tecnologias</i></li>
+	<li><b>Sede el Porvenir</b>, ubicado en la localidad de Bosa</li>
+	</ul>
+	<div style="clear:left"></div> <!-- div de tipo clear requerido para controlar el estilo float -->
+	<nav class="submenu"> 
+    <a href="#ciudad" target="_self"><button class="boton">Ciudad</button></a>
+    <a href="#llegar" target="_self"><button class="boton">Como llegar</button></a>
+    <a href="#lugar" target="_self"><button class="boton">El sitio</button></a>
+    </nav>
+	
+  </div>
+  
+  <div class="contenedor">
+  <h3 id="llegar" class="seccion">Como llegar</h3>
+  <p>Hay diferentes formas de llegar, aqui pondremos las 2 formas mas usuales y mas utilizadas pro las personas para llegar a este sitio.</p>
+  <img src="imagenes/caminos.png" width="720px" heigth="480px" alt="imagen mapa ciudad" style="float:left"/>
+  <ul>
+  <li style="color:red">El camino Rojo: <a style="color:black">Basicamente, si puede coger un SITP que suba por la 19 puede llegar a la universidad, 
+  muchos estudiantes llegan en Transmilenio a la estación de la 19 en la Caracas y de ahi cogen dicho SITP.</a></li>
+  <li style="color:green">El camino Verde: <a style="color:black">Tomando como punto de partida el <b>Parque de los periodista</b>
+   se puede llegar caminando en un tiempo no mayor a 10 minutos, pasando por la media torta se encuentran unas escaleras que llegan derechito a la
+   universidad, eso si, es plena subida de montaña desde el inicio, se recomienda buen estado físico</a></li>
+  </ul>
+  <div style="clear:left"></div> <!-- div de tipo clear requerido para controlar el estilo float -->
+  <nav class="submenu"> 
+  <a href="#ciudad" target="_self"><button class="boton">Ciudad</button></a>
+  <a href="#llegar" target="_self"><button class="boton">Como llegar</button></a>
+  <a href="#lugar" target="_self"><button class="boton">El sitio</button></a>
+  </nav>
+  </div>
+  
+  <div class="contenedor" class="seccion">
+   <h3 id="lugar" class="seccion">El sitio</h3>
+   <p>Estos son los edificios que se pueden apreciar desde la entrada de la universidad</p>
+  <img src="imagenes/sitio.jpg" width="720px" heigth="480px" alt="imagen edificio principal" style="float:left"/>
+  Aqui listamos los edificios que componen la facultad:
+  <ul>
+	<li> Edificio Natura</li>
+	<li> Decanatura</li>
+	<li> El aereopuerto</li>
+	<li> La lagunita</li>
+	<li> El jardin de Sigmund</li>
+	<li> Las canchas</li>
+	<li> Fotocopias Doña Ceci</li>
+  </ul>
+  <div style="clear:left"></div> <!-- div de tipo clear requerido para controlar el estilo float -->
+  
+  <nav class="submenu">
+  <a href="#ciudad" target="_self"><button class="boton">Ciudad</button></a>
+  <a href="#llegar" target="_self"><button class="boton">Como llegar</button></a>
+  <a href="#lugar" target="_self"><button class="boton">El sitio</button></a>
+  </nav>
+  </div>
+  
+</div>
+</div>
+
+<nav class="menufin">
+<a href="creditos.html">Creditos Imagenes</a> |
+<a href="recursos.html">Fuentes y Recursos</a> |
+<a href="mapa.html">Mapa del Sitio</a> |
+<a href="perfiles.html">Sobre el autor y su hermana</a>
+</nav>
+
+</body>
+</html>
