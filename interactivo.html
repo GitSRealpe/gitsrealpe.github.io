@@ -17,10 +17,10 @@
 <div class="contenedor">
 <div class="sidenav">
   <a href="index.html" target="_self">Inicio</a>
-  <a href="ubicacion.html" target="_self">¿Donde queda?</a>
+  <!-- <a href="ubicacion.html" target="_self">¿Donde queda?</a>
   <a href="historia.html">Un poco de historia</a>
   <a href="people.html">¿Quien se encuentra allá?</a>
-  <a href="actividades.html">¿Que hay para hacer allá?</a>
+  <a href="actividades.html">¿Que hay para hacer allá?</a> -->
   <a class="activo" href="interactivo.html">Juego/Mapa interactivo</a>
 </div>
 
@@ -32,8 +32,8 @@
 <li>Para apreciar mejor el mapa puedes usar los botones de zoom.</li>
 </ul>
 <div id="espacio"></div>
-Con este juego se busca presentar de una manera interactiva el movimiento dentro del espacio de la universidad, 
-usando un mapa de perspectiva aerea y tambien fotos de espacios comumes 
+Con este juego se busca presentar de una manera interactiva el movimiento dentro del espacio de la universidad,
+usando un mapa de perspectiva aerea y tambien fotos de espacios comumes
 y especificos como lo son el edificio principal (edificio Natura) y el area de administración.
 <p>
 Todo realizado con la ayuda de los siguientes sitios:
@@ -52,7 +52,7 @@ Todo realizado con la ayuda de los siguientes sitios:
 </p>
 <!-- inicio del script de phaser, todo sera contenido dentro del div con id "espacio" -->
 <script>
-	
+
 	//escena par el juego principal
 	var juego = new Phaser.Class({
 
@@ -68,7 +68,7 @@ Todo realizado con la ayuda de los siguientes sitios:
     preload: function ()
     {
 		//carga de la imagen con los diferentes estados para animacion
-        this.load.spritesheet('dron', 'assets/sprites/dron.png', {frameWidth: 35, frameHeight:35});			
+        this.load.spritesheet('dron', 'assets/sprites/dron.png', {frameWidth: 35, frameHeight:35});
 		this.load.spritesheet('target', 'assets/sprites/traget.png', {frameWidth:53, frameHeight: 52, margin:1});
     },
 
@@ -79,11 +79,11 @@ Todo realizado con la ayuda de los siguientes sitios:
 	this.scene.launch('HUD');
 	this.scene.moveBelow('juego','fondo');
 	this.scene.bringToTop('HUD');
-	
+
     var _this = this;
-	
+
 	dummy = this.physics.add.sprite(154, 1190, 'target');
-	
+
 	//crear y anadir el objeto player que utiliza el sprite de dron
 	player = this.physics.add.sprite(154, 1190, 'dron');
 	player.setOrigin(0.5, 0.5).setDisplaySize(60, 60).setCollideWorldBounds(false);
@@ -97,11 +97,11 @@ Todo realizado con la ayuda de los siguientes sitios:
         repeat: -1
     });
 	player.anims.play('dronfly');
-	
+
 	//mostrar la posicion del cursor
-	text = this.add.text(0, 0, 'Posicion mouse', {font: "24px Arial", fill: '#000000'}).setScrollFactor(0);	
+	text = this.add.text(0, 0, 'Posicion mouse', {font: "24px Arial", fill: '#000000'}).setScrollFactor(0);
 	text2 = this.add.text(0, 400, 'Posicion sprite', {font: "24px Arial", fill: '#000000'}).setScrollFactor(0);
-	
+
 	//crear un puntero
 	target = this.physics.add.sprite(200,200,'target');
 	this.anims.create({
@@ -111,13 +111,13 @@ Todo realizado con la ayuda de los siguientes sitios:
         repeat: -1
     });
 	target.anims.play('idleTarget');
-	
+
 	//mover el puntero con el mouse
 	this.input.on('pointermove', function (pointer) {
 		target.setPosition(pointer.x + this.cameras.main.scrollX, pointer.y + this.cameras.main.scrollY);
 		text.setText('PosX:'+ pointer.x +'\n'+'PosY:' + pointer.y);
     }, this);
-	
+
 	//funcion para el control de posicion del jugador
 	this.input.on('pointerdown', function (pointer) {
 		dummy.destroy();
@@ -128,15 +128,15 @@ Todo realizado con la ayuda de los siguientes sitios:
 		console.log('muevase hacia X: ' + posx + 'Y: ' + posy);
 		moviendose = true;
     }, this);
-	
+
 	cursors = this.input.keyboard.createCursorKeys();
-	
+
 	//campos de texto para debuggear
 	text.setVisible(false);
 	text2.setVisible(false);
-	
+
     },
-	
+
 	update: function (time, delta)
     {
         const speed = 75;
@@ -154,8 +154,8 @@ Todo realizado con la ayuda de los siguientes sitios:
 		} else if (cursors.down.isDown) {
 			player.body.setVelocityY(speed);
 		}
-		
-		
+
+
 		if(moviendose){
 			if(Phaser.Math.Distance.Between(player.x,player.y,posx,posy) < 5){
 				player.body.setVelocity(0);
@@ -164,14 +164,14 @@ Todo realizado con la ayuda de los siguientes sitios:
 				dummy.destroy();
 			}
 		}
-		
-		
+
+
 		text2.setText('Sprite \n' + player.x + '\n' + player.y);
     }
-	
+
 	//escena para la interfaz, botones y texto
 });
-	
+
 	var HUD = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -196,44 +196,44 @@ Todo realizado con la ayuda de los siguientes sitios:
     {
 		var _this = this;
 		var zip=1;
-		
-		
+
+
 		fotografia=this.add.image(0,0,'porteria').setVisible(false);
-		
+
 		recpie = this.add.graphics({ x: 150, y: 450 }).setVisible(false);
 		recpie.fillStyle(0x5400ff, 1);
 		recpie.fillRect(0,20,320,40);
 		pie = this.add.text(315, 490, '', {font: "24px Arial", fill: '#000000'}).setOrigin(0.5,0.5);
-		
+
 		rectangulo = this.add.graphics({ x: 500, y: 400 });
 		rectangulo.fillStyle(0x5400ff, 1);
 		rectangulo.fillRect(0,0,100,200);
-		
+
         zoomin = this.physics.add.sprite(520,520, 'lupas', 0).setInteractive();
 		zoomout = this.physics.add.sprite(570,520, 'lupas', 1).setInteractive();
 		camara = this.physics.add.sprite(550,460, 'lupas', 2).setInteractive();
 		zoomin.setDisplaySize(50,50);
 		zoomout.setDisplaySize(50,50);
 		camara.setDisplaySize(110,110);
-		
+
 		this.anims.create({
         key: 'anicamara',
         frames: this.anims.generateFrameNumbers('lupas', {start:3, end:4}),
         frameRate: 10,
         repeat: -1
 		});
-		
+
 		zoomin.on('pointerdown', function (pointer) {
 		zip=zip*2;
         cam.zoomTo(zip,1500);
-		
+
     }, this);
-	
+
 		zoomout.on('pointerdown', function (pointer) {
 		zip=zip/2;
         cam.zoomTo(zip,1500);
     });
-	
+
 	camara.on('pointerdown', function (pointer) {
 		console.log('click');
 		fotografia.destroy();
@@ -261,13 +261,13 @@ Todo realizado con la ayuda de los siguientes sitios:
 			pie.setText('Administracion/Secretarias');
 			console.log('click4');
 		}
-		
+
     },this);
-	
+
     }
 
 });
-	
+
 	//escena fondo para el mapa
 	var fondo = new Phaser.Class({
 
@@ -293,7 +293,7 @@ Todo realizado con la ayuda de los siguientes sitios:
         fondo = this.add.image(400, 300, 'foto');
 		fondo.setScale(0.5);
 		this.cameras.main.startFollow(player);
-		
+
 		// creacion de objetos posicion
 		pos1 = this.add.graphics({ x: 154, y: 1118 });
 		pos2 = this.add.graphics({ x: 454, y: 764 });
@@ -304,19 +304,19 @@ Todo realizado con la ayuda de los siguientes sitios:
 		pos2.fillCircle(0, 0, 25);
 		pos3.fillCircle(0, 0, 25);
 		pos4.fillCircle(0, 0, 25);
-		
-		
-		
+
+
+
     },
-	
+
 	update: function(time,delta)
 	{
-	
+
 	distp1 = Phaser.Math.Distance.Between(player.x,player.y,pos1.x,pos1.y);
 	distp2 = Phaser.Math.Distance.Between(player.x,player.y,pos2.x,pos2.y);
 	distp3 = Phaser.Math.Distance.Between(player.x,player.y,pos3.x,pos3.y);
 	distp4 = Phaser.Math.Distance.Between(player.x,player.y,pos4.x,pos4.y);
-	
+
 		if(moviendose){
 			if(distp1 < 50){
 				if(!visitado){
@@ -325,7 +325,7 @@ Todo realizado con la ayuda de los siguientes sitios:
 					visitado = true;
 				}
 			}
-			
+
 			if(distp2 < 50){
 				if(!visitado){
 					console.log('Lugar 2');
@@ -333,7 +333,7 @@ Todo realizado con la ayuda de los siguientes sitios:
 					visitado = true;
 				}
 			}
-			
+
 			if(distp3 < 50){
 				if(!visitado){
 					console.log('Lugar 3');
@@ -341,7 +341,7 @@ Todo realizado con la ayuda de los siguientes sitios:
 					visitado = true;
 				}
 			}
-			
+
 			if(distp4 < 50){
 				if(!visitado){
 					console.log('Lugar 4');
@@ -349,7 +349,7 @@ Todo realizado con la ayuda de los siguientes sitios:
 					visitado = true;
 				}
 			}
-			
+
 			if(distp1 > 50 && distp2 > 50 && distp3 > 50 && distp4 > 50){
 				visitado=false;
 				camara.anims.stop('anicamara');
@@ -357,15 +357,15 @@ Todo realizado con la ayuda de los siguientes sitios:
 				pie.setText('');
 				recpie.setVisible(false);
 				fotografia.destroy();
-				
+
 			}
-			
-			
+
+
 		}
 	}
 
 });
-	
+
     var config = {
         type: Phaser.AUTO,
 		width: 600,
@@ -392,7 +392,7 @@ Todo realizado con la ayuda de los siguientes sitios:
 	let text2;
 	let pie;
 	let recpie;
-	
+
 	var distp1,distp2,distp3,distp4;
 	var moviendose = true;
 	var posx, posy;
@@ -400,19 +400,16 @@ Todo realizado con la ayuda de los siguientes sitios:
 	var camara;
 	var visitado;
 
-	
-	
-
     </script>
 </div>
 </div>
 
-<nav class="menufin">
+<!-- <nav class="menufin">
 <a href="creditos.html">Creditos Imagenes</a> |
 <a href="recursos.html">Fuentes y Recursos</a> |
 <a href="mapa.html">Mapa del Sitio</a> |
 <a href="perfiles.html">Sobre el autor y su hermana</a>
-</nav>
+</nav> -->
 
 </body>
 </html>
