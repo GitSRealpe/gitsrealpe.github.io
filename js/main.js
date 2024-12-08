@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+// Variables to track double-tap
+let lastTapTime = 0;
 function onDocumentMouseDown(event) {
     sound.play();
     if (action) {
@@ -8,6 +10,15 @@ function onDocumentMouseDown(event) {
         action.time = 1.0;   // Start from 1 second (adjust as needed)
         action.play();  // Play the animation
     }
+
+    const currentTime = Date.now();
+    const tapGap = currentTime - lastTapTime;
+    // Check if the time between taps is within the double-tap threshold
+    if (tapGap < 300 && tapGap > 0) {
+        event.preventDefault(); // Prevent zoom on double-tap
+    }
+    lastTapTime = currentTime;
+
 }
 
 function onDocumentMouseUp(event) {
@@ -17,8 +28,6 @@ function onDocumentMouseUp(event) {
     }
 }
 
-
-
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -26,7 +35,9 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 renderer.domElement.addEventListener('mousedown', onDocumentMouseDown, false);
+renderer.domElement.addEventListener('touchstart', onDocumentMouseDown, false);
 renderer.domElement.addEventListener('mouseup', onDocumentMouseUp, false);
+renderer.domElement.addEventListener('touchend', onDocumentMouseUp, false);
 
 // Add AudioListener to the camera
 const listener = new THREE.AudioListener();
