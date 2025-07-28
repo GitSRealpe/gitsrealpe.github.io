@@ -47,7 +47,7 @@ const sound = new THREE.Audio(listener);
 // Load an audio file and set it as the Audio object's buffer
 const audioLoader = new THREE.AudioLoader();
 
-audioLoader.load('assets/ooiiao1.ogg', function (buffer) {
+audioLoader.load('../../assets/ooiiao1.ogg', function (buffer) {
     sound.setBuffer(buffer);
     sound.setLoop(false);
     sound.setVolume(1.0);
@@ -63,7 +63,7 @@ camera.position.z = 1;
 const loader = new GLTFLoader();
 let mixer;
 let action;
-loader.load('assets/scene.gltf', function (gltf) {
+loader.load('../../assets/scene.gltf', function (gltf) {
     const model = gltf.scene;
     scene.add(model);
     mixer = new THREE.AnimationMixer(model);
