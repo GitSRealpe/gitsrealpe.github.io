@@ -2,12 +2,13 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>SRealpe - Hello</title> <!-- titulo del sitio -->
-  <link href="stilos.css" rel="stylesheet" type="text/css"> <!-- asociacion a la hoja de estilos -->
-  <link rel="stylesheet" href="modules/bootstrap/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>SRealpe - Hello</title> <!-- titulo del sitio -->
+    <link href="stilos.css" rel="stylesheet" type="text/css"> <!-- asociacion a la hoja de estilos -->
+    <link rel="stylesheet" href="modules/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-  <script type="importmap">
+    <script type="importmap">
   {
     "imports": {
       "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
@@ -20,64 +21,175 @@
 
 <body>
 
-  <div class="contenedor">
-    <!-- menu de navegacion principal -->
-    <div class="sidenav">
-      <a class="activo" href="index.html" target="_self">Inicio</a>
-      <a href="interactivo.html">Juego/Mapa interactivo</a>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SRealpe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="contenido">
-      <h2 class="seccion">Introduccion</h2>
-      <p>Saludos, bienvenid@ a mi colección de páginas donde expongo mis proyectos y un poco sobre mi en el ambito
-        académico y profesional.
+    <!-- Home Section -->
+    <section id="home" class="section bg-light text-center ">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Sebastian Realpe, engineering and robotics nerd, see some of my projects.</p>
+        </div>
+    </section>
 
-        Soy Ingeniero Mecatrónico egresado de la <b>Universidad Nacional de Colombia</b>.
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="/media/face.jpeg" width="200px" alt="myFace"
+                        class="profile-photo img-fluid rounded-circle">
+                </div>
+                <div class="col-md-8">
+                    <p>I am a Mechatronics engineer from the <a href="https://unal.edu.co/">National University of
+                            Colombia</a> focused on robotics, research and spread of knowledge.
+                        I've put my hands on educational robots, industrial robots and state of the art research robots.
+                        Video game passion transfered into Simulators for robotics and industrial processes.
+                    </p>
+                </div>
+            </div>
+            <h2>Career</h2>
 
-      <p>Sitio bajo construccion todavia</p>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
+                <div class="col">
+                    <div class="card mb-3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Universidad Nacional de Colombia</h5>
+                            <p class="card-text">Bachelors on Mechatronics engineering.</p>
+                        </div>
+                    </div>
+                </div>
 
-      <a href="https://grizzled-moored-hiss.glitch.me/">Juego test</a>
-    </div>
-  </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <img src="https://www.udg.edu/ca/portals/3/logo-mostra-2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Universitat de Girona</h5>
+                            <p class="card-text">Researcher on underwater robotics</p>
+                        </div>
+                    </div>
+                </div>
 
-  <header class="navbar">
-    <p>navi</p>
-  </header>
+            </div>
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
-    </div>
-  </div>
+        </div>
+    </section>
 
-  <div class="container-fluid">
-    <div class="row align-items-center text-center" style="margin: 20px 0px;">
-      <div class="col">
-        <p> <b>click the cat</b> </p>
-      </div>
-    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 ">
+                <div class="col">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h5 class="card-title">Youtube</h5>
+                            <p class="card-text">Youtube channel where I try to showcase some of my experiences with
+                                robotics.</p>
+                            <a href="https://www.youtube.com/@srealpeYT" class="btn btn-primary">Go to channel</a>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="row align-items-center text-center" style="margin: 20px 0px;">
-      <div class="col">
-        <script type="module" src="js/main.js"></script>
-      </div>
-    </div>
+                <div class="col">
+                    <div class="card mb-3 ">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4">
+                                <img src="/media/apps/map.png" class="img-fluid rounded" style="opacity: 0.66;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Marine Robotics Network Map</h5>
+                                    <p class="card-text">A map to locate research groups in marine robotics around the
+                                        world.
+                                        Join efforts to push forward science and engineering!</p>
+                                    <a href="https://gitsrealpe.github.io/marine_robotics_network_map/"
+                                        class="btn btn-primary">View Map</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4">
+                                <img src="/media/apps/cat.png" class="img-fluid rounded-start" style="opacity: 0.33;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">SillyApps</h5>
+                                    <p class="card-text">Some silly web apps I've done.</p>
+                                    <a href="pages/silly_apps.html" class="btn btn-primary">See Silly apps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <ul class="list-unstyled d-flex justify-content-center flex-wrap">
+                <li><a href="https://scholar.google.com/citations?user=dYuG97wAAAAJ&hl=en" target="_blank"
+                        class="btn btn-outline-primary m-1">
+                        <i class="bi bi-mortarboard-fill"></i> Google Scholar</a></li>
+                <li><a href="https://linkedin.com/in/sebastian-realpe-rua" target="_blank"
+                        class="btn btn-outline-primary m-1"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://github.com/GitSRealpe" target="_blank" class="btn btn-outline-primary m-1"><i
+                            class="bi bi-github"></i> GitHub</a></li>
+                <li><a href="https://www.youtube.com/@srealpeYT" target="_blank" class="btn btn-outline-primary m-1"><i
+                            class="bi bi-youtube"></i> YouTube</a></li>
 
 
+            </ul>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 SebastianR. All rights reserved.</p>
+        <!-- <i class="fa-brands fa-google-scholar"></i> -->
+        <i class="fa-brands fa-github-square"></i>
+        <i class="fa fa-car"></i>
+    </footer>
 
-  </div>
-
-  <!-- menu de navegacion paginas secundarias -->
-  <!-- <nav class="menufin">
-<a href="perfiles.html">Sobre el autor y su hermana</a>
-</nav> -->
-
-  <script src="modules/bootstrap/bootstrap.min.js"></script>
+    <script src="modules/bootstrap/bootstrap.min.js"></script>
 
 </body>
 

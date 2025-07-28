@@ -1,6 +1,6 @@
 /* descripcion general del documento; color de fondo, tipo de fuente */
 body {
-    font-family: "Lato", sans-serif;
+	font-family: "Lato", sans-serif;
 	background-color: #A9A9A9;
 	color: black;
 	margin-bottom: 0px;
@@ -8,77 +8,16 @@ body {
 }
 
 /* salto suave en vez de saltos directos con enlaces dentro de la misma pagina */
-html{
+html {
 	scroll-behavior: smooth;
-}
-
-#espacio{
-	border-style: ridge;
-	margin: auto;
-	width: 600px;
-}
-
-/* estilo del titulo principal, donde se encuentra el logo del sitio */
-.titulo{
-	margin-top: 0;
-	border-style: ridge;
-    border-bottom-width: 3px;
-    border-bottom-color: green;
-    width: 100%;
-}
-
-/* estilo de los titulos secundarios y subtitulos */
-.seccion{
-	border-bottom: 3px double black;
-}
-
-/* estilo y configuracion de el menu de navegacion */
-.sidenav {
-    width: 200px;
-    position: sticky;			/* posicionamiento sticky, relativo inicialmente, toma propiedad de fixed cuando se hace scroll */ 
-	top: 0;
-    background: #eee;
-	float: left;				/* propiedad para permitir poner contenido al lado del elemento */
-}
-
-/* estilo y configuracion de los botones de navegacion */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;		/* eliminar el estilo por defecto de los enlaces */
-    font-size: 25px;
-    color: #818181;
-    display: block;
-	border: 1px solid black;
-	border-radius: 2px;
-}
-
-/* evento para cambio de estilo de los botones */
-.sidenav a:hover {
-	background-color: #555;
-    color: #f1f1f1;
-}
-
-/* estilo para indicar que boton fue seleccionado y en que pagina se encuentra */
-a.activo{
-	border-bottom: 3px solid red;
-}
-
-/* caja para definir el estilo del contenido principal de cada página */
-.contenido {
-	position: relative;
-	margin-left: 205px;
-	margin-bottom: 20px;
-    font-size: 20px;
-	border-style: ridge;	
-	background-color: #a8b1a8;
 }
 
 /* estilo para centrar imagenes en people.html */
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 	margin-bottom: 500px;
 	padding: 5px 5px 5px 5px;
 	border: 3px dotted red;
@@ -89,62 +28,6 @@ a.activo{
 	position: relative;
 }
 
-/* estilo para obtener scroll lateral y que el contenido se apile de forma horizontal */
-.horizontal{
-	overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-	cursor: grab;			/* cambiar el estilo del cursor por una manito que agarra */
-}
-
-/* caja especial para el contenido de historia.html donde se pone de fondo una imagen */
-.conth{
-	position: relative;
-	top: 0px;
-	padding-bottom: 25px;
-	margin-left: 205px; 
-    font-size: 20px;
-	/* configuraciones para la imagen de fondo */
-	background-image: url("imagenes/caldas.jpg");
-	background-attachment: fixed;
-	background-size: cover;
-	border-style: ridge;
-	color: black;
-	text-shadow:   -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; /* estilo para hacer mas visible el texto sobre un fondo irregular */
-}
-
-/* caja especial para la pagina people.html, donde se define un submenú para este */
-.contenidof {
-	position: relative;
-    font-size: 20px;
-	border-top-style: ridge;
-	background-color: #a8b1a8;
-	scroll-behavior: smooth;
-	height: 500px;
-	overflow: hidden;			/* ocultar la barra de scroll, ya que el submenu controlara el scroll */
-	
-}
-
-/* configuracion del submenu de navigacion de la pagina people.html */
-.mininav {
-    width: 150px;
-    position: sticky;
-	top: 53px;
-	float: left;
-    
-}
-
-/* configuracion de los botones del submenu de navegacion del sitio people.html */
-.mininav a {
-    font-size: 20px;
-    color: blue;
-    display: block;
-	border: 1px solid black;
-	border-radius: 5px;
-	background: #eee;
-	
-}
-
 /* estilo para configurar las listas del sitio */
 ul {
 	margin-left: 0px;
@@ -152,103 +35,131 @@ ul {
 	overflow: hidden;
 }
 
-/* configuracion del submenu de navigacion de la pagina ubicacion.html */
-nav.submenu{
-	position: absolute;
-	bottom: 0px;
-	right: 5px;
-}
 
-/* botones de navegación para las subsecciones de la pagina ubicacion.html */
-.boton{
-	color: white;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: normal;
-	text-align: center;
-	width: 130px;
-	background-image: url(imagenes/boton1.png);
-	padding:5px 10px 6px 8px;
-	cursor: pointer;
-}
 
-/* evento para cambio de estilo de los botones */
-.boton:hover{
-	background-image: url(imagenes/boton2.png);
-}
-
-/* estilo para el menu de paginas secundarias; creditos, recursos, autores... que se encuentra siempre en la parte inferior de la pagina */
-.menufin{
-	position: fixed;
-	bottom: 0;
-	border-left: 6px solid red;
-    background-color: lightgrey;
-}
-
-/* estilo para configuración de perfiles de autores */
-.user {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-right: 10px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  float: left;
-}
-
-/* estilo para caja especial para imagenes en la pagina creditos.html */
-.cuadro{
-	width: 25%;
-	height: auto;
-	float: left;
-	padding: 0 6px;
-	border: 3px ridge white;
-}
-
-/* configuracion para visualizacion de las imagenes dentro del entorno cuadro */
-.cuadro img{
-	width: 100%;
-	height: auto;
-	
-}
 /* estilo para los pie de fotos que muestran info sobre esta */
 .dropdown {
-    display: none;					/* inicialmente el pie de foto esta oculto, esto cambia en el evento de hover con el cursor */
-    position: absolute;
-    background-color: #F0E68C;
-    min-width: 160px;
+	display: none;
+	/* inicialmente el pie de foto esta oculto, esto cambia en el evento de hover con el cursor */
+	position: absolute;
+	background-color: #F0E68C;
+	min-width: 160px;
 	border: 1px solid black;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;						/* pie de foto por encima de las fotos */
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	/* pie de foto por encima de las fotos */
 }
+
 /* mostrar pie de foto ante un hover sobre el entorno cuadro */
 .cuadro:hover .dropdown {
-    display: block;
+	display: block;
 }
 
 
 
 /* Quitar estilo de lista por defecto de myUL */
 ul.myUL {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 /*Crear un nuevo estilo para la flecha de cada item de la lista*/
-.caret::before {  					/* inserta lo indicado antes del contenido donde se define, en este caso la flecha del item */
-  content: "\25B6";
-  color: black;
-  display: inline-block;
-  margin-right: 6px;
+.caret::before {
+	/* inserta lo indicado antes del contenido donde se define, en este caso la flecha del item */
+	content: "\25B6";
+	color: black;
+	display: inline-block;
+	margin-right: 6px;
 }
 
 @media only screen and (max-width: 780px) {
-    .cuadro {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
+	.cuadro {
+		width: 49.99999%;
+		margin: 6px 0;
+	}
 }
 
 
 
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+}
+
+#wrapper {
+	display: flex;
+	flex: 1 0 auto;
+}
+
+#sidebar-wrapper {
+	min-width: 200px;
+	max-width: 250px;
+	height: 100vh;
+	position: sticky;
+	top: 0;
+	overflow-y: auto;
+}
+
+.sidebar-heading {
+	font-size: 1.5rem;
+}
+
+.list-group-item {
+	border: none;
+	padding: 15px 20px;
+}
+
+.list-group-item:hover {
+	background-color: #343a40;
+}
+
+#page-content-wrapper {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content {
+	flex: 1 0 auto;
+}
+
+footer {
+	flex-shrink: 0;
+}
+
+.section {
+	padding: 30px 0;
+}
+
+#home {
+	padding-top: 60px;
+}
+
+.section h2 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.project-img {
+	max-height: 300px;
+	object-fit: cover;
+	margin-bottom: 20px;
+}
+
+.navbar {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+@media (max-width: 768px) {
+	#sidebar-wrapper {
+		min-width: 150px;
+		max-width: 150px;
+	}
+
+	.sidebar-heading {
+		font-size: 1.2rem;
+	}
+}

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SRealpe - Hello</title> <!-- titulo del sitio -->
+    <link href="../stilos.css" rel="stylesheet" type="text/css"> <!-- asociacion a la hoja de estilos -->
+    <link rel="stylesheet" href="../modules/bootstrap/bootstrap.min.css">
+
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading text-white text-center py-4">
+                <a href="/" class="text-white text-decoration-none">SRealpe: Apps</a>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="#project1" class="list-group-item list-group-item-action bg-dark text-white">Spinning Cat</a>
+                <a href="#project2" class="list-group-item list-group-item-action bg-dark text-white">Project 2</a>
+                <a href="#project3" class="list-group-item list-group-item-action bg-dark text-white">Project 3</a>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <!-- Top Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/projects.html">myApps</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Project Sections -->
+            <main class="main-content">
+                <section id="project1" class="section">
+                    <div class="container">
+                        <h2>Spinning Cat</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="../media/apps/cat.png" width="150px" alt="Project 1 Image"
+                                    class="img-fluid project-img">
+                            </div>
+                            <div class="col-md-6">
+                                <p>I'm passionate about creating interactive applications that are easy to deploy and
+                                    share. This is one of several small HTML with Three.js projects I use to explore and
+                                    learn
+                                    through hands-on experimentation.</p>
+                                <a href="apps/cat.html" class="btn btn-primary">oo-ee-a-e</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="project2" class="section bg-light">
+                    <div class="container">
+                        <h2>Project 2</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="project2.jpg" alt="Project 2 Image" class="img-fluid project-img">
+                            </div>
+                            <div class="col-md-6">
+                                <p>A detailed description of Project 2. Highlight the challenges faced, solutions
+                                    implemented, and the impact of the project.</p>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="project3" class="section">
+                    <div class="container">
+                        <h2>Project 3</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="project3.jpg" alt="Project 3 Image" class="img-fluid project-img">
+                            </div>
+                            <div class="col-md-6">
+                                <p>A detailed description of Project 3. Include any unique aspects, collaborations, or
+                                    outcomes of this project.</p>
+                                <a href="#" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="bg-dark text-white text-center py-3">
+                <p>&copy; 2025 SRealpe. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!-- menu de navegacion paginas secundarias -->
+    <!-- <nav class="menufin">
+<a href="perfiles.html">Sobre el autor y su hermana</a>
+</nav> -->
+
+    <script src="../modules/bootstrap/bootstrap.min.js"></script>
+
+</body>
+
+</html>
